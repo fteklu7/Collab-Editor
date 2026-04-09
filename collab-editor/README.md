@@ -114,25 +114,3 @@ Sessions are held in memory. When the last user disconnects from a session, the 
 
 ---
 
-## How to Talk About This Project
-
-**The one-liner:**
-> "I built a real-time collaborative code editor where multiple users can write code together in the same session. It uses WebSockets to broadcast changes instantly across connected clients, with syntax highlighting for four languages and a session-based architecture on the backend."
-
-**If they ask how the real-time sync works:**
-> "Every time a user types, the client sends a `code_change` message over a persistent WebSocket connection to the server. The server updates the stored document state and broadcasts that change to every other connected client in the same session — excluding the sender to avoid echo. The client applies the incoming change without triggering another broadcast."
-
-**If they ask about conflict resolution:**
-> "I used last-write-wins, which works well for small sessions. Each change is applied as it arrives. I'm aware of more robust approaches like Operational Transformation or CRDTs — which is how Google Docs and Figma handle it — but for this scope, last-write-wins keeps the code simple and the behavior predictable."
-
-**If they ask about the session system:**
-> "Sessions are managed in memory on the server using a Map. Each session stores the current document state, the selected language, and a list of connected clients with their WebSocket references. When the last person leaves a session, it's deleted automatically. For production, you'd want to back this with Redis or a database so sessions survive server restarts."
-
-**If they ask why you built it:**
-> "I wanted to work with WebSockets beyond just reading about them. Real-time sync is one of those things that sounds straightforward until you actually implement it — deciding what to broadcast, to whom, when to update local state vs. remote state, how to handle disconnects. Building it end to end taught me a lot about stateful server architecture."
-
----
-
-## License
-
-MIT
