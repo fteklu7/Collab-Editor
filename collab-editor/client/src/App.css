@@ -1,0 +1,113 @@
+.join-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #1e1e2e;
+  padding: 20px;
+}
+
+.join-card {
+  background: #181825;
+  border: 1px solid #313244;
+  border-radius: 14px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.join-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #cba6f7;
+  text-align: center;
+}
+
+.join-subtitle {
+  font-size: 0.88rem;
+  color: #6c7086;
+  text-align: center;
+  margin-top: -10px;
+  line-height: 1.5;
+}
+
+.join-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.join-field label {
+  font-size: 0.8rem;
+  color: #a6adc8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.join-field input {
+  background: #313244;
+  border: 1.5px solid #45475a;
+  border-radius: 7px;
+  color: #cdd6f4;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.join-field input:focus {
+  border-color: #cba6f7;
+}
+
+.tab-row {
+  display: flex;
+  background: #313244;
+  border-radius: 8px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: transparent;
+  color: #6c7086;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tab-btn.active {
+  background: #45475a;
+  color: #cdd6f4;
+  font-weight: 600;
+}
+
+.tab-btn:hover:not(.active) {
+  color: #cdd6f4;
+}
+
+.form-error {
+  font-size: 0.82rem;
+  color: #f38ba8;
+  text-align: center;
+}
+
+.btn-primary {
+  padding: 12px;
+  background: #cba6f7;
+  color: #1e1e2e;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background 0.15s;
+}
+
+.btn-primary:hover {
+  background: #b48eed;
+}
